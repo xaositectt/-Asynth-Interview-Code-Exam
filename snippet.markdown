@@ -125,10 +125,62 @@ the bug:
 </script>
 ```
 
-
 2) Describe the merits of statically typed languages, as opposed to ('5 * "16 kittens" + "10" == 90').
 
 **My answer:**
+
+In statically pr strongly typed languages the type is fixed, either explicitly given by the developer or "guessed" by the compiler and the correct types are checked before run time. The advantage is that bugs related to type checking can be avoided this way.
+
+Also if a variable is given a type it cannot be changed later.
+
+Example: c++, compiler throws a type error even though the code in the if branch never gets executed
+
+```c++
+#include <iostream>
+#include <string>
+
+int main()
+{
+  std::string name = "Roberta";
+  if (false) {
+    std::cout << name + 3 << "\n";
+  }
+}
+
+```
+
+Strongly typed languages don't allow confusing behaviors like weird implicit type coercions that can have many rules (in Javascript) and are sometimes hard to understand.
+
+Javascript is a dynamically typed language so the type checking is at run time. This means that there can be bugs left hidden in the code because only the parts of the code that actually get executed get type checked. In my example the toUpperCase() function expects a string so it should throw an error but it gets ignored at runtime.
+
+```javascript
+let num = 3;
+// if it's outside of the if scope, it throws an error
+// console.log(num.toUpperCase())
+if (false) {
+    // it doesn't throw an error this way
+    console.log(num.toUpperCase())
+}
+```
+
+The dynamically typed Javascript also allows behaviors like the explicit change of types or implicit type coercion, where the a type is converted into another type, which can be confusing and hard to understand. Examples:
+
+```javascript
+false == 0 // logs true 
+[] + 3 // turns into "3"
+5 == "5" // logs true
+```
+
+In some cases I can force stricter rules for example these will log false
+
+```javascript
+false === 0 // logs false 
+5 === "5" // logs false
+```
+
+
+
+
 
 3) Fix the bug below.
 
