@@ -129,7 +129,7 @@ the bug:
 
 **My answer:**
 
-In statically pr strongly typed languages the type is fixed, either explicitly given by the developer or "guessed" by the compiler and the correct types are checked before run time. The advantage is that bugs related to type checking can be avoided this way.
+In statically or strongly typed languages the type is fixed, either explicitly given by the developer or "guessed" by the compiler and the correct types are checked before run time. The advantage is that bugs related to type checking can be avoided this way.
 
 Also if a variable is given a type it cannot be changed later.
 
@@ -178,10 +178,6 @@ false === 0 // logs false
 5 === "5" // logs false
 ```
 
-
-
-
-
 3) Fix the bug below.
 
 ```javascript
@@ -195,6 +191,40 @@ function contains(haystack, needle)
 ```
 
 **My answer:**
+
+notes:
+
+- in the original function the argument list had "haystack" and the for ... in had "list", so I fixed that.
+- I changed the == to === to make the equality check stricter
+
+The intended bug was due to the function always returning after the first iteration of the for ... in statement. A function quits executing after it returns a value, and we need to iterate through the whole haystack to check all elements, not just the first one, and we can achieve that by storing the boolean value in a variable.
+
+```javascript
+function containsOriginal(haystack, needle) {
+  for (const element of haystack) {
+    if (element == needle) return true;
+    return false;
+  }
+}
+
+// fixed version
+function contains(haystack, needle) {
+  let result = false;
+  for (const element of haystack) {
+    if (element === needle) {
+      result = true;
+    }
+  }
+  return result;
+}
+
+const haystack = [1, 2, 3];
+
+console.log(contains(haystack, 2)); // logs true
+console.log(containsOriginal(haystack, 2)); // logs false
+```
+
+
 
 4) Explain the difference between Encapsulation and Abstraction to a 12 years old child.
 
