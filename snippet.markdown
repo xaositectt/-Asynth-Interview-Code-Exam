@@ -275,4 +275,22 @@ Because of the value of the cosθ the scalar product can be used to: basically a
 
 **My answer:**
 
-- ​
+- check the code for bugs that could cause the crash
+
+- check if there are potentially very expensive/memory inefficient methods used in the code.
+
+- If there are memory errors, check the code if there are any kind of 3D objects or sprites that consume too much memory and make the application crash. Check if removing these would help with the crashing. There could be some kind of memory leak that needs to be fixed.
+
+- Check if the crash happens on different devices, to determine whether the problem is hardware related (graphic card maybe).
+
+- If I'm using Chrome, check <chrome://gpu/> if it has something useful. Check if hardware acceleration is turned on.
+
+- if some kind of rendering precision, like number of faces or edges is set to high in the code, try lowering it to increase performance.
+
+- try lowering overall resolution.
+
+- Check if there is some kind of incompatibility between the client and the code, like some setting or extension or library not supported in Firefox, etc.
+
+- check for webGL best practices, fastest/most efficient patterns and methods
+
+  ​
