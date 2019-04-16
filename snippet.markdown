@@ -228,8 +228,51 @@ console.log(containsOriginal(haystack, 2)); // logs false
 
 4) Explain the difference between Encapsulation and Abstraction to a 12 years old child.
 
+**My answer:** 
+
+Abstraction and Encapsulation both are ways to create a model of a subject we're interested in, but the two are different:
+
+**Abstraction** is, when you create a simplified "copy" of something that is supposed to work somewhat similarly to the real thing, but but you're hiding all the complicated details in the background and only show the most important parts, that work similarly to the thing you copied.
+
+For example, an abstract copy of an elephant all could be something that is gray, could trumpet and have a trunk and big ears and tusks and  have two eyes, but all the biology and complicated behavior and complex biological things inside the elephant would be hidden and omitted and you could only ever see and hear interact with the outside: the trumpeting, the trunk, the ears, the eyes. Those are the things that we most care about in an abstract copy of an elephant, isn't it? But meanwhile we know, that there are thousands and thousands of complicated things happening in the original elephant inside its body, its brain, its nervous system, in its mind.
+
+So a living breathing African elephant would be a real precise thing, and the abstract would be a grey plushie that you can push and it trumpets.
+
+**Encapsulation** is when we create something, a subject we're interested in, and we collect all the data and behavior and create a model.
+
+The two different kinds of information we can have about this subject is: all the data and details of the subject: its internal workings and attributes.
+
+And all the things we can see, use from the outside: the methods, behavior, that do something with the subject, for example changes some data, makes it display something, say something, etc.
+
+These methods/behaviors are what we, the users can touch and handle and use- we can't touch or use the internal details, those are complicated and tiny, we don't need to worry about them! We only touch the methods and behaviors, these are things that connect our model with the outside.
+
+For example we are trying to create a smartphone.
+
+- Inside we have an incredible amount of data and details: electronic parts, memory, etc..
+- Outside we have the things we can touch and cause behaviors- our methods: use the touchscreen to download something, use the buttons to increase volume, we can touch the phone and lift it up, and so on!
+
 5) What is the dot product of two vectors and can you list a few examples where it can be useful in computer graphics?
+
+**My answer:**
+
+The dot product of vectors a and b is a single value: |a|*|b|*cosθ, so the absolute value of vector a times absolute value vector b times cos θ, θ being he angle between the two vectors.
+
+In mechanics we can use this method to calculate the amount of work of a force does, by calculating the dot product of a force and the displacement it causes.
+
+Because of the value of the cosθ the scalar product can be used to: basically anything where we need information about the relationship of two directions
+
+- determine of two directions are perpendicular or point in similar/opposing directions
+- dot product with a plane's normal vector can be used to determine the relationship between a vector and the plane
+- as in physics, it can be used to calculate one vectors' component that is pointing in the others' direction
+- determine direction relationship between camera direction and game character direction, to determine which faces are visible and not
+- or: shadow direction with subject and light source
+- when creating new geometry in a CAD software it can be used to calculate directional relationships between faces (normal vectors) or a profile and a face
+- for example when making a protrusion on a face, we can use it to make the protrusion always in the perpendicular direction
 
 6) What are the typical matrices you may use in a vertex shader?
 
 7) The WebGL application you are developing seems to run slow on mobile and consumes too much memory, makes the browser crash. What ideas would you try to help the situtation?
+
+**My answer:**
+
+- ​
